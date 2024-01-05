@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    </head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+    }
+   .container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(162, 221, 245);
+    background-image: url(pongal-img.jpg);
+background-position: center;
+background-size: cover;
+padding: 0 8%;
+justify-content: center;
+align-items:center;
+position: relative;
+}
+.logo{
+    width: 120px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.content{
+    top: 30%;
+    position: absolute;
+    transform: translateY(-50%);
+    
+
+}
+.content h1{
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    margin-top: 300px;
+    margin-left: 300px;
+}
+.launch{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+     margin-left: 300px;
+}
+.launch div{
+    flex-basis: 100px;
+}
+
+.launch div p{
+    font-size: 70px;
+    margin-bottom: -14px;
+    border: 20px;
+}
+.launch span
+{
+    color: red;
+}
+.content span
+{
+    color: rgb(121, 5, 5);
+}
+</style>
+<body>
+ <div class="container">
+<div class="content">
+    <h1>Let's Wait for <span> Biggest</span> Festival</h1>
+<div class="launch">
+   <div>
+    <p id="days">00</p>
+    <span>Days</span>
+   </div>
+   <div>
+    <p id="hours"> 00</p>
+    <span>Hours</span>
+   </div>
+   <div>
+    <p id="minutes"> 00</p>
+    <span>Minutes</span>
+   </div>
+   <div>
+    <p id="seconds"> 00</p>
+    <span>Seconds</span>
+   </div>
+</div>
+ </div>
+ </div>
+   <script>
+    var countDownDate = new Date(" January 14,2024 00:00:00").getTime();
+    var x=setInterval(function(){
+        var now= new Date().getTime();
+        var distance= countDownDate- now;
+        var days= Math.floor(distance/(1000*60*60*24));
+        var hours= Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+        var seconds=Math.floor((distance%(1000*60))/1000);
+        document.getElementById("days").innerHTML=days;
+        document.getElementById("hours").innerHTML=hours;
+        document.getElementById("minutes").innerHTML=minutes;
+        document.getElementById("seconds").innerHTML=seconds;
+        if (diastance<0){
+            clearInterval(x)
+     document.getElementById("days").innerHTML=00;
+        document.getElementById("hours").innerHTML=00;
+        document.getElementById("minutes").innerHTML=00;
+        document.getElementById("seconds").innerHTML=00;
+        }
+},1000);
+   </script> 
+ </body>
+</html>
